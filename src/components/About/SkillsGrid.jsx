@@ -21,7 +21,7 @@ const SkillsGrid = () => {
         {
             icon: <Database className='w-6 h-6' />,
             title: "Databases",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing",
+            description: "Designing and managing relational databases.",
             technologies: ["MySql", " MSSQL", "Postgre"]
 
         },
