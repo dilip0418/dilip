@@ -2,7 +2,7 @@ import Section from "../ui/Section";
 import Carousel from "../ui/Carousel";
 import ProjectCard from "./ProjectCard";
 import aravind from "../../assets/aravind.png";
-import mypic from "../../assets/Mypic.jpeg";
+import MyPic from "../../assets/MyPic.jpeg";
 import prathap from "../../assets/prathap.jpg";
 import ganesh from "../../assets/ganesh.png";
 
@@ -16,7 +16,7 @@ const ProjectsSection = () => {
             liveUrl: "https://ai-art.demo.com",
             stats: { stars: 245, forks: 56 },
             contributors: [
-                { name: "Dilip", role: "Software Engineer", image: mypic }
+                { name: "Dilip", role: "Software Engineer", image: MyPic }
             ],
         },
         {
@@ -26,7 +26,7 @@ const ProjectsSection = () => {
             technologies: ["SpringBoot", "MySQL", "Spring Security", "JWT", "Spring Data JPA"],
             githubUrl: "https://github.com/dilip0418/EasyCredsSpringBoot",
             contributors: [
-                { name: "Dilip", role: "Software Engineer", image: mypic }
+                { name: "Dilip", role: "Software Engineer", image: MyPic }
             ],
         },
         {
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
             technologies: ["SpringBoot", "Angular", "MySQL", "Spring Security", "Spring Data JPA", "JWT"],
             // stats: { stars: 128, forks: 34 },
             contributors: [
-                { name: "Dilip", role: "Software Engineer", image: mypic },
+                { name: "Dilip", role: "Software Engineer", image: MyPic },
                 { name: "Aravindha Samy", role: "Software Engineer", image: aravind },
             ],
         },
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
             liveUrl: "https://dilip0418.github.io/portfolio-v2/",
             technologies: ["HTML/CSS", "Vanila Js", "Bootstrap", "Github Pages"],
             contributors: [
-                { name: "Dilip", role: "Software Engineer", image: mypic }
+                { name: "Dilip", role: "Software Engineer", image: MyPic }
             ],
         },
         {
@@ -59,7 +59,7 @@ const ProjectsSection = () => {
             githubUrl: "https://github.com/dilip0418/Plagiarism-Detector",
             technologies: ["Python", "FastAPI", "HTML/CSS", "Tessarct-OCR", "Google Search API", "Web Scraping"],
             contributors: [
-                { name: "Dilip", role: "Software Engineer", image: mypic },
+                { name: "Dilip", role: "Software Engineer", image: MyPic },
                 { name: "Ganesh", role: "Software Engineer", image: ganesh },
                 { name: "Prathap Reddy", role: "Frontend Dev", image: prathap },
                 { name: "Harshitha", role: "Software Engineer" },
@@ -73,7 +73,7 @@ const ProjectsSection = () => {
             technologies: ["Vanila JS", "WeatherStack API", "HTML/CSS", "Bootstrap"],
             liveUrl: "https://dilip-weather-app.netlify.app/",
             contributors: [
-                { name: "Dilip", role: "Software Engineer", image: mypic }
+                { name: "Dilip", role: "Software Engineer", image: MyPic }
             ],
         }
     ];
