@@ -3,7 +3,7 @@ import { SiC, SiCplusplus, SiJavascript } from "react-icons/si";
 import csharp from '../../assets/csharp.png';
 import spring from '../../assets/spring.png';
 import springboot from '../../assets/springboot.png';
-import netCore from '../../assets/Net_core.png';
+import netCore from '../../assets/NET_core.png';
 import Carousel from "../ui/Carousel";
 
 
