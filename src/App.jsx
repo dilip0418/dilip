@@ -4,6 +4,7 @@ import { ThemeProvider } from './context/ThemeContext'
 import PageLayout from './components/layout/PageLayout';
 import Home from './pages/Home';
 import GoToTopButton from './components/ui/GotoTopButton';
+import Blogs from './pages/Blogs';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <PageLayout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path='/blogs' element={<Blogs />} />
             {/* Other routes */}
           </Routes>
           <GoToTopButton />

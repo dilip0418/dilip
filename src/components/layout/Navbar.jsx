@@ -57,6 +57,9 @@ const Navbar = () => {
         { name: 'Contact', path: '#contact' },
     ];
 
+    // Conditionally render links based on the page
+    const isOnBlogsPage = location.pathname === '/blogs';
+
     const NavLink = ({ path, children }) => {
         const isActive = activeSection && `#${activeSection}` === path;
         return (
@@ -86,7 +89,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <HashLink smooth to="#hero" className="flex items-center space-x-2">
+                    <HashLink smooth to="/" className="flex items-center space-x-2">
                         <span className="text-xl font-bold text-gray-900 dark:text-white">
                             Dilip
                         </span>
@@ -94,7 +97,7 @@ const Navbar = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-4">
-                        {navLinks.map((link) => (
+                        {!isOnBlogsPage && navLinks.map((link) => (
                             <NavLink key={link.path} path={link.path}>
                                 {link.name}
                             </NavLink>
@@ -133,7 +136,7 @@ const Navbar = () => {
                     }`}
             >
                 <div className="px-4 py-2 space-y-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
-                    {navLinks.map((link) => (
+                    {!isOnBlogsPage && navLinks.map((link) => (
                         <HashLink
                             key={link.path}
                             smooth

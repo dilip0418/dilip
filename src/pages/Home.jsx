@@ -1,5 +1,4 @@
 // src/pages/Home.jsx
-import { Contact } from 'lucide-react';
 import AboutSection from '../components/About/AboutSection';
 import Hero from '../components/home/Hero';
 import TimelineSection from '../components/Journey/TimelineSection';

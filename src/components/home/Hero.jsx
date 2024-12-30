@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import AnimatedText from '../ui/AnimatedText';
 import SocialHandles from '../ui/SocialHandles';
+import { Link } from 'react-router-dom';  // Using Link for route navigation
 import { HashLink } from 'react-router-hash-link';
 
 const Hero = () => {
@@ -56,11 +57,14 @@ const Hero = () => {
                         >
                             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
                                 <HashLink smooth to='#projects'>View my Work</HashLink>
-
                             </button>
                             <button className="px-8 py-3 border-2 border-gray-800 dark:border-white hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black rounded-lg font-medium transition-all">
                                 <HashLink smooth to='#contact'>Get in Touch</HashLink>
                             </button>
+                            {/* Blogs Button */}
+                            <Link to="/blogs" className="px-8 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
+                                Read My Blogs
+                            </Link>
                         </motion.div>
 
                         <motion.div
@@ -74,8 +78,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </section >
-
+        </section>
     );
 };
 
