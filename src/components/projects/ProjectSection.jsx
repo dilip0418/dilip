@@ -42,7 +42,7 @@ const ProjectsSection = () => {
             ],
         },
         {
-            title: "Protfolio Website - Dilip V.1",
+            title: "Portfolio Website - Dilip V.1",
             description: "A personal portfolio website to showcase my work, skills, and projects.  This website is built using Vanila Js, HTML/CSS.",
             type: "Web App",
             githubUrl: "https://github.com/dilip0418/portfolio-v2",
@@ -53,7 +53,7 @@ const ProjectsSection = () => {
             ],
         },
         {
-            title: "Plagiarism Detetor - PlagCheck",
+            title: "Plagiarism Detector - PlagCheck",
             description: "A plagiarism detection tool that compares text documents to identifies and reports similarities and potential copyright violations.",
             type: "Web App/NLP",
             githubUrl: "https://github.com/dilip0418/Plagiarism-Detector",
