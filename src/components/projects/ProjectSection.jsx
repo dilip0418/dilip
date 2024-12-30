@@ -14,7 +14,7 @@ const ProjectsSection = () => {
             type: "Web App",
             technologies: [".NET Core", "Entity Framework", "SQL Server", "Swagger", "JWT", "ReactJS", "Bootstrap", "Docker"],
             githubUrl: "https://github.com/dilip0418/Credit-Card-Management-System",
-            stats: { stars: 245, forks: 56 },
+            // stats: { stars: 245, forks: 56 },
             contributors: [
                 { name: "Dilip", role: "Software Engineer", image: MyPic }
             ],
@@ -38,6 +38,7 @@ const ProjectsSection = () => {
             // stats: { stars: 128, forks: 34 },
             contributors: [
                 { name: "Dilip", role: "Software Engineer", image: MyPic },
+                { name: "Ganesh", role: "Software Engineer", image: ganesh },
                 { name: "Aravindha Samy", role: "Software Engineer", image: aravind },
             ],
         },
