@@ -10,10 +10,10 @@ const ProjectsSection = () => {
     const projects = [
         {
             title: "Credit Card Management System - (Using .NET Core Web API)",
-            description: "A credit card management system that allows users to apply for a credit card, view their credit card details, and make transactions. Also view the frontend part repo name 'Credit-Card-Mangement-System-frontend'.",
+            description: `A credit card management system that allows users to apply for a credit card, view their credit card details, and make transactions. Also view the frontend part repo Credit-Card-Mangement-System-frontend <a href="https://github.com/dilip0418/Credit-Card-Management-System-frontend" target="_blank" rel="noopener noreferrer">🔗</a>`,
             type: "Web App",
             technologies: [".NET Core", "Entity Framework", "SQL Server", "Swagger", "JWT", "ReactJS", "Bootstrap", "Docker"],
-            liveUrl: "https://ai-art.demo.com",
+            githubUrl: "https://github.com/dilip0418/Credit-Card-Management-System",
             stats: { stars: 245, forks: 56 },
             contributors: [
                 { name: "Dilip", role: "Software Engineer", image: MyPic }
@@ -31,7 +31,7 @@ const ProjectsSection = () => {
         },
         {
             title: "Placement Management System",
-            description: "A full-stack web application to manage campus placements. Features include student registration, company registration, and placement statistics. Also view the frontend part repo name 'placement-frontend'.",
+            description: `A full-stack web application to manage campus placements. Features include student registration, company registration, and placement statistics. Also view the frontend part repo name placement-frontend <a href="https://github.com/dilip0418/placement-frontend" target="_blank" rel="noopener noreferrer">🔗</a>.`,
             type: "Full Stack",
             githubUrl: "https://github.com/dilip0418/placement",
             technologies: ["SpringBoot", "Angular", "MySQL", "Spring Security", "Spring Data JPA", "JWT"],

@@ -11,30 +11,27 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const { theme, toggleTheme } = useTheme();
     const location = useLocation();
-    const menuRef = useRef(null); // Ref for menu container
+    const menuRef = useRef(null);
 
-    // Define section IDs to track
+    const isOnBlogsPage = location.pathname === '/blogs';
+
     const sectionIds = ['hero', 'about', 'journey', 'projects', 'contact'];
     const activeSection = useActiveSection(sectionIds);
 
-    // Update the URL hash based on the active section
     useEffect(() => {
         if (activeSection) {
             window.history.replaceState(null, '', `#${activeSection}`);
         }
     }, [activeSection]);
 
-    // Change navbar appearance on scroll
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close mobile menu on route change
     useEffect(() => setIsOpen(false), [location]);
 
-    // Close menu when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -57,9 +54,6 @@ const Navbar = () => {
         { name: 'Contact', path: '#contact' },
     ];
 
-    // Conditionally render links based on the page
-    const isOnBlogsPage = location.pathname === '/blogs';
-
     const NavLink = ({ path, children }) => {
         const isActive = activeSection && `#${activeSection}` === path;
         return (
@@ -78,6 +72,35 @@ const Navbar = () => {
             </HashLink>
         );
     };
+
+    const ThemeToggleButton = () => (
+        <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg text-gray-600 dark:text-gray-300 
+                hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle theme"
+        >
+            {isOnBlogsPage ? (
+                theme === 'light' ? (
+                    <Moon className="w-5 h-5" />
+                ) : (
+                    <Sun className="w-5 h-5" />
+                )
+            ) : (
+                theme === 'light' ? (
+                    <>
+                        <h4 className="md:hidden">Dark Mode</h4>
+                        <Moon className="w-5 h-5" />
+                    </>
+                ) : (
+                    <>
+                        <h4 className="md:hidden">Light Mode</h4>
+                        <Sun className="w-5 h-5" />
+                    </>
+                )
+            )}
+        </button>
+    );
 
     return (
         <nav
@@ -102,70 +125,52 @@ const Navbar = () => {
                                 {link.name}
                             </NavLink>
                         ))}
-                        <button
-                            onClick={toggleTheme}
-                            className="p-2 rounded-lg text-gray-600 dark:text-gray-300 
-                                hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                            aria-label="Toggle theme"
-                        >
-                            {theme === 'light' ? (
-                                <Moon className="w-5 h-5" />
-                            ) : (
-                                <Sun className="w-5 h-5" />
-                            )}
-                        </button>
+                        <ThemeToggleButton />
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 
-                            hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                    >
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
+                    {/* Mobile Menu Button - Only show on main page */}
+                    {!isOnBlogsPage ? (
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 
+                                hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        >
+                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    ) : (
+                        <div className="md:hidden">
+                            <ThemeToggleButton />
+                        </div>
+                    )}
                 </div>
             </div>
 
-            {/* Mobile Navigation */}
-            <div
-                ref={menuRef}
-                className={`md:hidden transition-all duration-300 ease-in-out ${isOpen
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0 pointer-events-none'
-                    }`}
-            >
-                <div className="px-4 py-2 space-y-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
-                    {!isOnBlogsPage && navLinks.map((link) => (
-                        <HashLink
-                            key={link.path}
-                            smooth
-                            to={link.path}
-                            className="block px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 
-                                hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                            onClick={() => setIsOpen(false)} // Close menu on link click
-                        >
-                            {link.name}
-                        </HashLink>
-                    ))}
-                    <button
-                        onClick={toggleTheme}
-                        className="p-2 rounded-lg text-gray-600 dark:text-gray-300 
-                            hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                        aria-label="Toggle theme"
-                    >
-                        {theme === 'light' ? (
-                            <>
-                                <h4>Dark Mode</h4> <Moon className="w-5 h-5" />
-                            </>
-                        ) : (
-                            <>
-                                <h4>Light Mode</h4> <Sun className="w-5 h-5" />
-                            </>
-                        )}
-                    </button>
+            {/* Mobile Navigation - Only render on main page */}
+            {!isOnBlogsPage && (
+                <div
+                    ref={menuRef}
+                    className={`md:hidden transition-all duration-300 ease-in-out ${isOpen
+                        ? 'max-h-96 opacity-100'
+                        : 'max-h-0 opacity-0 pointer-events-none'
+                        }`}
+                >
+                    <div className="px-4 py-2 space-y-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+                        {navLinks.map((link) => (
+                            <HashLink
+                                key={link.path}
+                                smooth
+                                to={link.path}
+                                className="block px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 
+                                    hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </HashLink>
+                        ))}
+                        <ThemeToggleButton />
+                    </div>
                 </div>
-            </div>
+            )}
         </nav>
     );
 };

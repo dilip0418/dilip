@@ -27,9 +27,10 @@ const ProjectCard = ({ project, index }) => {
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                         {project.title}
                     </h3>
-                    <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {project.description}
-                    </p>
+                    <p
+                        className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: project.description }}
+                    />
                 </div>
 
                 {/* Tech Stack */}

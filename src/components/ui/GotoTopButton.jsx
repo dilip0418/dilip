@@ -30,7 +30,7 @@ const GoToTopSpiderButton = () => {
             <div className="fixed bottom-4 right-4 z-50">
                 <button
                     onClick={scrollToTop}
-                    className={`relative w-16 h-16 rounded-full text-white
+                    className={`relative animate-bounce w-16 h-16 rounded-full text-white
                     flex items-center justify-center transition-transform transform hover:scale-110`}
                     aria-label="Go to top"
                 >
