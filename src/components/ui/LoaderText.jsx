@@ -18,7 +18,7 @@ const LoaderText = () => {
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
                     transition={{
-                        duration: 1.5,
+                        duration: 2.5,
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
