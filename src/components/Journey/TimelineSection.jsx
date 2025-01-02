@@ -38,7 +38,7 @@ const TimelineSection = () => {
                 organization: 'Basavarajeshwari PU College',
                 description: 'Although my course is related to Biology, Later after 12th I decided to pursue Computer Science.',
                 highlights: [
-                    'Scrored 80% in final exams',
+                    'Scored 80% in final exams',
                 ]
             },
             {
@@ -61,8 +61,8 @@ const TimelineSection = () => {
                 organization: 'IEEE Conference',
                 description: `Awarded for research paper on NLP based application that proposes an innovative approach to Detect Plagiarism in text based content. {<a href="https://ieeexplore.ieee.org/document/10150442" target="_blank" rel="noopener noreferrer">Read more</a>}`,
                 highlights: [
-                    'Selected among 500+ global nominations',
-                    'Featured in Tech Monthly magazine'
+                    'Proposed an innovative approach to detect plagiarism in text-based content',
+                    'Awarded the Best Paper Award at IEEE Conference'
                 ]
             }
         ]

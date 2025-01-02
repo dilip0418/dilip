@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import AnimatedText from '../ui/AnimatedText';
 import SocialHandles from '../ui/SocialHandles';
-import { Link } from 'react-router-dom';  // Using Link for route navigation
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { ArrowRight, Download, ExternalLink } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -43,30 +44,65 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
+                            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
                         >
                             I craft exceptional digital experiences that merge elegant design
                             with robust functionality. Specializing in modern web technologies
                             and user-centric solutions.
                         </motion.p>
+
+                        {/* Main CTA */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
-                            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+                            className="mb-8"
                         >
-                            <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
-                                <HashLink smooth to='#projects'>View my Work</HashLink>
-                            </button>
-                            <button className="px-8 py-3 border-2 border-gray-800 dark:border-white hover:bg-gray-800 hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black rounded-lg font-medium transition-all">
-                                <HashLink smooth to='#contact'>Get in Touch</HashLink>
-                            </button>
-                            {/* Blogs Button */}
-                            <Link to="/blogs" className="px-8 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-medium transition-all shadow-lg hover:shadow-xl">
-                                Read My Blogs
-                            </Link>
+                            <HashLink
+                                smooth
+                                to="#projects"
+                                className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+                            >
+                                View my Work
+                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </HashLink>
                         </motion.div>
 
+                        {/* Secondary Actions */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                            className="flex flex-wrap justify-center items-center gap-6 mb-12"
+                        >
+                            <a
+                                href="https://drive.google.com/file/d/1w6Msh48PXV_DOyBqu28XT-RjswlwnU_o"
+                                download="Resume_DilipKumar.pdf"
+                                target='_blank'
+                                className="inline-flex items-center gap-2 px-6 py-2 border-2 border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 hover:bg-blue-500 dark:hover:bg-blue-600 text-gray-800 dark:text-gray-200 hover:text-white dark:hover:text-white rounded-lg font-medium transition-all duration-300 shadow-sm hover:shadow-lg group"
+                            >
+                                <Download className="w-5 h-5 transition-transform transform group-hover:-translate-y-1" />
+                                Resume
+                            </a>
+
+                            <Link
+                                to="/blogs"
+                                className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors group"
+                            >
+                                Read Blog
+                                <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </Link>
+                            <HashLink
+                                smooth
+                                to="#contact"
+                                className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors group"
+                            >
+                                Contact Me
+                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </HashLink>
+                        </motion.div>
+
+                        {/* Social Links */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
