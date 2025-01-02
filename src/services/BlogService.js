@@ -2,8 +2,11 @@ const BlogService = {
     fetchDevToBlogs: async () => {
         const DevToUsername = import.meta.env.VITE_DEVTO_USERNAME;
         try {
-            const url = `https://dev.to/api/articles?username=${DevToUsername}`;
+            const url = `https://dev.to/api/articles?username=${DevToUsername}&per_page=8`;
             const response = await fetch(url);
+            console.log(response);
+
+
 
             // Check if response is successful
             if (!response.ok) {
@@ -11,6 +14,8 @@ const BlogService = {
             }
 
             const data = await response.json();
+            console.log(data);
+
 
             // Check if data is valid
             if (data && Array.isArray(data) && data.length > 0) {
